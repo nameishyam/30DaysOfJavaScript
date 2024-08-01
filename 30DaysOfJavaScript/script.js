@@ -43,24 +43,27 @@ function checkTheme() {
 document.addEventListener("DOMContentLoaded", checkTheme);
 
 function toggleDarkLight() {
-  
-  let input = document.getElementById("suggestion-list")
+  let input = document.getElementById("suggestion-list");
   const body = document.querySelector("body");
-
   const button = document.getElementById("toggle");
 
   if (body.classList.contains("dark-mode")) {
-    body.className = "light-mode";
-    input.style.color = 'white';
-    button.innerHTML = "☀️";
-    localStorage.setItem("theme", "light-mode");
-
+      body.className = "light-mode";
+      input.style.color = 'black';  // Correct color for light mode
+      button.style.transition = "all 1s ease";
+      button.innerHTML = "☀️";
+      button.innerHTML.transition = "all 1s ease";
+      localStorage.setItem("theme", "light-mode");
   } else {
-    body.className = "dark-mode";
-    button.innerHTML = "🌙";
-    localStorage.setItem("theme", "dark-mode");
+      body.className = "dark-mode";
+      input.style.color = 'white';  // Correct color for dark mode
+      button.style.transition = "all 1s ease";
+      button.innerHTML = "🌙";
+      button.innerHTML.transition = "all 1s ease";
+      localStorage.setItem("theme", "dark-mode");
   }
 }
+
 
 
 
